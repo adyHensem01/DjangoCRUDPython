@@ -9,13 +9,6 @@ def book_list(request):
     books = list(Book.objects.values())
     return JsonResponse(books, safe=False)
 
-"""@csrf_exempt  # Disable CSRF just for this demo (not for production!)
-def book_create(request):
-    if request.method == 'POST':
-        title = request.POST['title']
-        author = request.POST['author']
-        book = Book.objects.create(title=title, author=author)
-        return JsonResponse({'id': book.id})"""
 
 @csrf_exempt  # Disable CSRF just for this demo (not for production!)
 def book_create(request):
